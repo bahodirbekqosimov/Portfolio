@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="canonical" href="https://bahodirbek.uz/" />
-    <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/bi.png" type="image/x-icon">
 
 
     <link rel="stylesheet" href="style.css" />
@@ -21,8 +21,9 @@
         <div class="container header-inner">
             <div class="site-title">Qosimov Bahodirbek </div>
             <nav class="main-nav">
-                <!-- <a href="#" class="nav-link">Bosh sahifa</a> -->
-                <a href="#" class="nav-link">Loyihalar</a>
+                <a href="./Resume.pdf" download="Bahodirbek_Qosimov_Resume.pdf" class="nav-link" id="resume-link">
+                    Resume
+                </a>
             </nav>
         </div>
     </header>
@@ -55,12 +56,21 @@
                         </svg>
 
                     </a>
+                    <a target="_blank" aria-label="telegram" href="https://www.instagram.com/bahodirbek.qosimov/"
+                        class="icon-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="22" height="22" viewBox="0 0 24 24">
+                            <path
+                                d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 1.5A4 4 0 0 0 3.5 7.5v9A4 4 0 0 0 7.5 20.5h9a4 4 0 0 0 4-4v-9a4 4 0 0 0-4-4h-9zm9.75 1a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" />
+                        </svg>
+
+                    </a>
                     <a target="_blank" aria-label="telegram" href="https://t.me/BahodirbekQosimov" class="icon-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="25" height="25" viewBox="0 0 24 24">
                             <path
                                 d="M9.999 16.2 9.823 20c.396 0 .57-.171.778-.375l1.869-1.771 3.877 2.83c.711.393 1.218.186 1.398-.661l2.531-11.905c.259-1.145-.414-1.59-1.196-1.309L3.427 11.5c-1.138.439-1.123 1.067-.194 1.354l4.29 1.338L17.6 7.25c.487-.295.931-.132.566.163l-8.167 8.787z" />
                         </svg>
                     </a>
+
                 </div>
 
                 <p class="lead">
@@ -68,16 +78,16 @@
                 </p>
 
                 <p style="display: flex; gap: 15px;">
-                   <img src="./img/py.png" alt="Python" style="height: 45px;">
-                   <img src="./img/nj.png" alt="Python" style="height: 48px;">
-                   <img src="./img/js.png" alt="Python" style="height: 45px;">
-                   <img src="./img/dj.png" alt="Python" style="height: 48px;">
-                   <img src="./img/pg.png" alt="Python" style="height: 48px;">
-                   <img src="./img/lx.png" alt="Python" style="height: 48px;">
+                    <img src="./img/py.png" alt="Python" style="height: 45px;">
+                    <img src="./img/nj.png" alt="Python" style="height: 48px;">
+                    <img src="./img/js.png" alt="Python" style="height: 45px;">
+                    <img src="./img/dj.png" alt="Python" style="height: 48px;">
+                    <img src="./img/pg.png" alt="Python" style="height: 48px;">
+                    <img src="./img/lx.png" alt="Python" style="height: 48px;">
 
 
 
-                   
+
                 </p>
 
                 <div class="cta">
@@ -90,10 +100,22 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>© 2025 bahodirbek.uz</p>
+            <p>© <span id="year"></span> bahodirbek.uz</p>
         </div>
     </footer>
-    
+    <script>
+        document.getElementById("resume-link").addEventListener("click", function (e) {
+            e.preventDefault();
+            const link = document.createElement("a");
+            link.href = "./Resume.pdf";
+            link.download = "Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
 
 </body>
 
